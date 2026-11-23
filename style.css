@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SO'NMAS AFSUNA: MMORPG - ULTIMATE DARK FANTASY STYLES
+   SO'NMAS AFSUNA: MMORPG - ULTIMATE REALISTIC DARK FANTASY STYLES
    ========================================================================== */
 
 :root {
@@ -9,15 +9,16 @@
   --accent-purple: #9d4edd;
   --purple-glow: rgba(157, 78, 221, 0.5);
   --crimson-red: #ff0055;
-  --blood-red: #d90429;
+  --blood-red: #8a0303;
+  --blood-fresh: #c90000;
   --dark-bg: #07090e;
-  --panel-bg: rgba(15, 20, 32, 0.92);
-  --panel-border: rgba(255, 215, 0, 0.28);
-  --panel-card: rgba(22, 30, 48, 0.85);
+  --panel-bg: rgba(14, 18, 30, 0.95);
+  --panel-border: rgba(255, 215, 0, 0.35);
+  --panel-card: rgba(22, 28, 45, 0.9);
   --text-main: #f0f4fc;
-  --text-muted: #8b9bb4;
-  --hp-color: #e63946;
-  --mp-color: #00b4d8;
+  --text-muted: #94a3b8;
+  --hp-color: #ba0000;
+  --mp-color: #0284c7;
   --exp-color: #7b2cbf;
   --font-title: 'Cinzel', 'Georgia', serif;
   --font-ui: 'Rajdhani', 'Segoe UI', system-ui, sans-serif;
@@ -39,11 +40,24 @@ body {
   min-height: 100vh;
   position: relative;
   background-image: 
-    radial-gradient(circle at 50% 30%, rgba(30, 20, 60, 0.8) 0%, rgba(7, 9, 14, 0.98) 75%),
+    radial-gradient(circle at 50% 25%, rgba(40, 15, 30, 0.85) 0%, rgba(7, 9, 14, 0.98) 75%),
     url('assets/main_hero.jpg');
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
+}
+
+/* REAL QON VA YARALAR BILAN EKRAN VINETKASI */
+#blood-screen-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8500;
+  box-shadow: inset 0 0 100px rgba(186, 0, 0, 0);
+  transition: box-shadow 0.2s ease;
+}
+#blood-screen-overlay.bleeding {
+  box-shadow: inset 0 0 160px rgba(138, 3, 3, 0.85), inset 0 0 50px rgba(201, 0, 0, 0.6);
 }
 
 /* Scrollbars */
@@ -83,12 +97,12 @@ body {
 
 .loading-logo-box {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .game-title {
   font-family: var(--font-title);
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
   font-weight: 900;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -112,7 +126,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   border: 1px solid rgba(0, 242, 254, 0.4);
   border-radius: 20px;
   padding: 6px 18px;
@@ -156,12 +170,12 @@ body {
 
 .loading-tip {
   margin-top: 25px;
-  max-width: 500px;
+  max-width: 520px;
   text-align: center;
   font-size: 0.9rem;
   color: var(--text-muted);
   font-style: italic;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   padding: 8px 16px;
   border-radius: 6px;
   border-left: 3px solid var(--primary-gold);
@@ -172,7 +186,7 @@ body {
   padding: 14px 45px;
   font-size: 1.3rem;
   font-family: var(--font-title);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
   color: #111;
   background: linear-gradient(135deg, #ffd166, #ffb703, #fb8500);
@@ -208,13 +222,13 @@ body {
 }
 
 .story-modal {
-  max-width: 850px;
+  max-width: 880px;
   width: 100%;
   background: var(--panel-bg);
   border: 2px solid var(--primary-gold);
   border-radius: 14px;
   padding: 35px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 25px var(--gold-glow);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.95), 0 0 25px var(--gold-glow);
   position: relative;
   max-height: 90vh;
   overflow-y: auto;
@@ -235,9 +249,9 @@ body {
 }
 
 .story-content {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   line-height: 1.75;
-  color: #d1d5db;
+  color: #cbd5e1;
   margin-bottom: 25px;
 }
 
@@ -290,7 +304,7 @@ body {
 }
 
 /* ==========================================================================
-   3. MAIN GAME LAYOUT & TOP NAVIGATION
+   3. TOP NAVIGATION & ALIY SARKARDA BADGE
    ========================================================================== */
 #main-game {
   display: flex;
@@ -300,9 +314,8 @@ body {
   z-index: 10;
 }
 
-/* TOP NAVBAR */
 .top-nav {
-  background: rgba(10, 14, 25, 0.95);
+  background: rgba(10, 14, 25, 0.97);
   border-bottom: 2px solid var(--panel-border);
   backdrop-filter: blur(10px);
   padding: 12px 25px;
@@ -314,7 +327,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
 }
 
 .nav-brand {
@@ -334,22 +347,36 @@ body {
 .nav-player-summary {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 6px 16px;
   border-radius: 8px;
 }
 
 .player-lvl-badge {
-  background: linear-gradient(135deg, #d90429, #7b2cbf);
+  background: linear-gradient(135deg, #8a0303, #7b2cbf);
   color: #fff;
-  font-weight: 800;
-  font-size: 1rem;
-  padding: 4px 10px;
+  font-weight: 900;
+  font-size: 1.05rem;
+  padding: 4px 12px;
   border-radius: 6px;
   border: 1px solid #ff70a6;
-  box-shadow: 0 0 10px rgba(217, 4, 41, 0.6);
+  box-shadow: 0 0 12px rgba(186, 0, 0, 0.7);
+}
+
+.supreme-commander-tag {
+  background: linear-gradient(135deg, #ffd166, #ff0055);
+  color: #111;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 209, 102, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .currency-box {
@@ -366,7 +393,7 @@ body {
 .nav-menu-tabs {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -374,15 +401,15 @@ body {
   background: rgba(22, 30, 48, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-main);
-  padding: 10px 18px;
+  padding: 9px 15px;
   border-radius: 8px;
   font-family: var(--font-ui);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.2s ease;
 }
 
@@ -399,6 +426,18 @@ body {
   box-shadow: 0 0 15px var(--gold-glow);
 }
 
+.tab-btn.special-wheel {
+  border-color: #f72585;
+  color: #ff70a6;
+}
+.tab-btn.special-wheel:hover,
+.tab-btn.special-wheel.active {
+  background: rgba(247, 37, 133, 0.2);
+  border-color: #f72585;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(247, 37, 133, 0.6);
+}
+
 .tab-btn.special-shop {
   border-color: #06d6a0;
   color: #72efdd;
@@ -412,11 +451,11 @@ body {
 }
 
 /* ==========================================================================
-   4. GAME VIEWS CONTAINER
+   4. GAME CONTAINER & VIEWS
    ========================================================================== */
 .game-container {
   flex: 1;
-  max-width: 1400px;
+  max-width: 1420px;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -430,11 +469,11 @@ body {
 }
 
 /* ==========================================================================
-   5. BATTLE VIEW (EKSHN JANG REJIMI)
+   5. BATTLE VIEW & REALISTIC COMBAT ARENA
    ========================================================================== */
 .battle-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 330px 1fr;
   gap: 20px;
 }
 
@@ -444,7 +483,6 @@ body {
   }
 }
 
-/* HERO STATS PANEL */
 .hero-card-panel {
   background: var(--panel-bg);
   border: 2px solid var(--panel-border);
@@ -456,7 +494,7 @@ body {
 
 .hero-avatar-box {
   width: 100%;
-  height: 240px;
+  height: 250px;
   border-radius: 10px;
   overflow: hidden;
   border: 2px solid rgba(255, 215, 0, 0.4);
@@ -477,8 +515,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
-  padding: 10px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, transparent 100%);
+  padding: 10px 14px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -516,7 +554,7 @@ body {
   box-shadow: 0 0 10px var(--purple-glow);
 }
 
-/* STAT BARS */
+/* BARS */
 .bar-group {
   margin-bottom: 12px;
 }
@@ -539,7 +577,7 @@ body {
   border-radius: 7px;
   transition: width 0.2s ease;
 }
-.hp-bar { background: linear-gradient(90deg, #d90429, #ff4d6d); }
+.hp-bar { background: linear-gradient(90deg, #8a0303, #ff0055); }
 .mp-bar { background: linear-gradient(90deg, #0077b6, #00f2fe); }
 .exp-bar { background: linear-gradient(90deg, #5a189a, #9d4edd); }
 
@@ -556,7 +594,7 @@ body {
 .stat-item span:first-child { color: var(--text-muted); }
 .stat-item span:last-child { font-weight: bold; color: #fff; float: right; }
 
-/* BATTLE ARENA MAIN STAGE */
+/* ARENA PANEL */
 .arena-panel {
   background: var(--panel-bg);
   border: 2px solid var(--panel-border);
@@ -586,16 +624,15 @@ body {
   font-size: 1rem;
 }
 
-/* ARENA CANVAS / DISPLAY */
 .arena-canvas-wrapper {
   position: relative;
   width: 100%;
-  height: 400px;
-  background: radial-gradient(circle at 50% 60%, rgba(30, 20, 50, 0.7), #06080e 85%), url('assets/main_hero.jpg') center/cover;
+  height: 420px;
+  background: radial-gradient(circle at 50% 50%, rgba(45, 20, 35, 0.8), #05070c 85%), url('assets/main_hero.jpg') center/cover;
   border: 2px solid rgba(255, 183, 3, 0.3);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.95);
 }
 
 #combatCanvas {
@@ -604,27 +641,26 @@ body {
   display: block;
 }
 
-/* COMBAT FLOATING TEXT / EFFECTS */
+/* REALISTIC FLOATING DAMAGE & WOUNDS */
 .damage-number {
   position: absolute;
   font-family: var(--font-title);
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   pointer-events: none;
   animation: floatUp 0.8s forwards;
   z-index: 50;
 }
-.damage-normal { color: #ffeb3b; text-shadow: 0 0 8px #f57f17; }
-.damage-crit { color: #ff0055; font-size: 2.3rem; text-shadow: 0 0 15px #d50000; }
+.damage-normal { color: #ffea00; text-shadow: 0 0 10px #ff6d00; }
+.damage-crit { color: #ff0055; font-size: 2.5rem; text-shadow: 0 0 18px #ba0000; }
 .damage-player { color: #00e5ff; text-shadow: 0 0 10px #0091ea; }
 
 @keyframes floatUp {
   0% { transform: translate(-50%, 0) scale(0.8); opacity: 1; }
-  50% { transform: translate(-50%, -30px) scale(1.2); opacity: 1; }
-  100% { transform: translate(-50%, -60px) scale(1); opacity: 0; }
+  50% { transform: translate(-50%, -35px) scale(1.25); opacity: 1; }
+  100% { transform: translate(-50%, -70px) scale(1); opacity: 0; }
 }
 
-/* SKILLS & ACTION BUTTONS BAR */
 .action-skills-bar {
   margin-top: 15px;
   display: grid;
@@ -663,18 +699,9 @@ body {
   cursor: not-allowed;
 }
 
-.skill-icon {
-  font-size: 1.8rem;
-}
-.skill-name {
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
-.skill-cost {
-  font-size: 0.75rem;
-  color: var(--accent-cyan);
-}
+.skill-icon { font-size: 1.8rem; }
+.skill-name { font-size: 0.9rem; font-weight: 700; text-align: center; }
+.skill-cost { font-size: 0.75rem; color: var(--accent-cyan); }
 .skill-cd-overlay {
   position: absolute;
   inset: 0;
@@ -688,13 +715,11 @@ body {
   opacity: 0;
   pointer-events: none;
 }
-.skill-slot-btn.on-cd .skill-cd-overlay {
-  opacity: 1;
-}
+.skill-slot-btn.on-cd .skill-cd-overlay { opacity: 1; }
 
 .battle-logs {
   margin-top: 15px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   height: 110px;
@@ -708,9 +733,186 @@ body {
 .log-monster { color: #ffb4a2; }
 .log-crit { color: #ff0055; font-weight: bold; }
 .log-drop { color: #ffd166; font-weight: bold; }
+.log-blood { color: #e63946; font-weight: bold; }
 
 /* ==========================================================================
-   6. FORGE / TEMIRXONA (KUCHAYTIRISH BO'LIMI - TOSH BILAN)
+   6. AYLANADIGAN BARABAN (LUCKY FORTUNE WHEEL)
+   ========================================================================== */
+.wheel-container-wrapper {
+  background: var(--panel-bg);
+  border: 2px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.85);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .wheel-container-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wheel-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.wheel-canvas-box {
+  position: relative;
+  width: 380px;
+  height: 380px;
+}
+
+#wheelCanvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 35px rgba(255, 183, 3, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.9);
+  border: 4px solid var(--primary-gold);
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 32px solid #ff0055;
+  filter: drop-shadow(0 0 8px #ff0055);
+  z-index: 20;
+}
+
+.btn-spin-wheel {
+  margin-top: 25px;
+  padding: 16px 50px;
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #111;
+  background: linear-gradient(135deg, #ffd166, #ffb703, #ff0055);
+  border: 2px solid #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(255, 183, 3, 0.8);
+  transition: all 0.2s;
+}
+.btn-spin-wheel:hover:not(:disabled) {
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(255, 200, 0, 1);
+}
+.btn-spin-wheel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+.wheel-rewards-info {
+  background: var(--panel-card);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.wheel-rewards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.wheel-reward-card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   7. 100 TA QAHRAMON VA UNVONLAR KATALOGI (ENG OLIY: ALIY SARKARDA)
+   ========================================================================== */
+.heroes-catalog-wrapper {
+  background: var(--panel-bg);
+  border: 2px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.85);
+}
+
+.heroes-catalog-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.heroes-grid-100 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  max-height: 580px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.hero-type-card {
+  background: var(--panel-card);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.hero-type-card.supreme {
+  border-color: #ffd166;
+  background: linear-gradient(180deg, rgba(255, 209, 102, 0.2) 0%, rgba(22, 28, 45, 0.95) 100%);
+  box-shadow: 0 0 25px rgba(255, 209, 102, 0.6);
+}
+
+.hero-type-card.unlocked {
+  border-color: #06d6a0;
+}
+
+.hero-type-rank-num {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--primary-gold);
+}
+
+.hero-type-avatar {
+  font-size: 2.8rem;
+  margin: 6px 0;
+}
+
+.hero-type-title {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.hero-type-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   8. FORGE / TEMIRXONA (SOVUTLAR KUCHAYTIRISH MAX LEVEL: 100)
    ========================================================================== */
 .forge-container {
   display: grid;
@@ -772,11 +974,12 @@ body {
   background: linear-gradient(135deg, #ffd166, #ff0055);
   color: #fff;
   font-weight: 900;
-  font-size: 1.1rem;
-  padding: 4px 14px;
+  font-size: 1.15rem;
+  padding: 5px 20px;
   border-radius: 20px;
   margin-top: 8px;
   border: 1px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
 }
 
 .stones-inventory-grid {
@@ -808,7 +1011,7 @@ body {
 }
 
 .stone-icon { font-size: 2.2rem; margin-bottom: 5px; }
-.stone-name { font-size: 0.9rem; font-weight: bold; margin-bottom: 4px; }
+.stone-name { font-size: 0.85rem; font-weight: bold; margin-bottom: 4px; }
 .stone-count { font-size: 1.1rem; font-weight: 900; color: #ffd166; }
 
 .enhance-chances-box {
@@ -846,10 +1049,9 @@ body {
   box-shadow: 0 0 35px rgba(255, 183, 3, 1);
 }
 
-/* GEAR INVENTORY FOR UPGRADING */
 .gear-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
   gap: 12px;
   max-height: 480px;
   overflow-y: auto;
@@ -893,7 +1095,7 @@ body {
 }
 
 /* ==========================================================================
-   7. SHOP / MAGAZIN (REAL PUL TULDIRISH UZB SOMDA & PROMOKOD DIYORBEK)
+   9. SHOP / MAGAZIN (KARTA: 9860080186988947 VA PROMOKOD DIYORBEK)
    ========================================================================== */
 .shop-wrapper {
   background: var(--panel-bg);
@@ -915,6 +1117,58 @@ body {
   font-size: 2.3rem;
   color: var(--primary-gold);
   letter-spacing: 2px;
+}
+
+/* OFFICIAL DONATE CARD BANNER */
+.official-donate-card-box {
+  background: linear-gradient(135deg, rgba(16, 24, 40, 0.95), rgba(30, 20, 50, 0.95));
+  border: 2px solid #06d6a0;
+  border-radius: 14px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 0 25px rgba(6, 214, 160, 0.35);
+}
+
+.card-info-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-chip-icon { font-size: 3rem; }
+
+.card-number-display {
+  font-family: monospace;
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffd166;
+  text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+}
+
+.btn-copy-card {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #06d6a0, #00b4d8);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  color: #111;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-copy-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(6, 214, 160, 0.7);
 }
 
 /* PROMO CODE SECTION */
@@ -978,7 +1232,6 @@ body {
   box-shadow: 0 0 25px rgba(247, 37, 133, 0.8);
 }
 
-/* REAL MONEY PACKAGES (UZB SOMDA) */
 .shop-packages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1024,25 +1277,9 @@ body {
   letter-spacing: 1px;
 }
 
-.pack-icon {
-  font-size: 3.5rem;
-  margin-bottom: 12px;
-}
-
-.pack-title {
-  font-family: var(--font-title);
-  font-size: 1.35rem;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.pack-benefits {
-  list-style: none;
-  font-size: 0.95rem;
-  color: #d1d5db;
-  margin: 15px 0 20px 0;
-  line-height: 1.6;
-}
+.pack-icon { font-size: 3.5rem; margin-bottom: 12px; }
+.pack-title { font-family: var(--font-title); font-size: 1.35rem; color: #fff; margin-bottom: 8px; }
+.pack-benefits { list-style: none; font-size: 0.95rem; color: #d1d5db; margin: 15px 0 20px 0; line-height: 1.6; }
 
 .pack-price-tag {
   font-size: 1.4rem;
@@ -1075,12 +1312,12 @@ body {
 }
 
 /* ==========================================================================
-   8. PAYMENT MODAL (PAYME / CLICK / UZUM BANK SIMULATOR)
+   10. PAYMENT MODAL WITH RECIPIENT CARD: 9860080186988947
    ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(8px);
   z-index: 10000;
   display: flex;
@@ -1089,18 +1326,16 @@ body {
   padding: 20px;
 }
 
-.modal-overlay.hidden {
-  display: none;
-}
+.modal-overlay.hidden { display: none; }
 
 .payment-modal-box {
   background: #0f1422;
   border: 2px solid var(--primary-gold);
   border-radius: 14px;
-  max-width: 520px;
+  max-width: 540px;
   width: 100%;
   padding: 30px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 30px var(--gold-glow);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.95), 0 0 30px var(--gold-glow);
   position: relative;
 }
 
@@ -1115,11 +1350,28 @@ body {
   cursor: pointer;
 }
 
+.card-transfer-banner {
+  background: rgba(6, 214, 160, 0.12);
+  border: 1px solid #06d6a0;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 15px 0;
+  text-align: center;
+}
+.card-transfer-title { font-size: 0.85rem; color: #a8dadc; margin-bottom: 4px; }
+.card-transfer-num {
+  font-family: monospace;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #ffd166;
+  letter-spacing: 2px;
+}
+
 .payment-methods-selector {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .pay-provider-btn {
@@ -1139,15 +1391,8 @@ body {
   background: rgba(0, 242, 254, 0.2);
 }
 
-.payment-field-group {
-  margin-bottom: 15px;
-}
-.payment-field-group label {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
+.payment-field-group { margin-bottom: 15px; }
+.payment-field-group label { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; }
 .payment-field-group input {
   width: 100%;
   background: #070a12;
@@ -1173,7 +1418,7 @@ body {
 }
 
 /* ==========================================================================
-   9. KUNLIK SOVG'ALAR (DAILY REWARDS)
+   11. KUNLIK SOVG'ALAR & INVENTAR
    ========================================================================== */
 .daily-rewards-container {
   background: var(--panel-bg);
@@ -1203,10 +1448,7 @@ body {
   transition: all 0.2s;
 }
 
-.daily-day-card.claimed {
-  border-color: #06d6a0;
-  opacity: 0.65;
-}
+.daily-day-card.claimed { border-color: #06d6a0; opacity: 0.65; }
 .daily-day-card.claimed::after {
   content: "OLINDI ✓";
   position: absolute;
@@ -1223,23 +1465,9 @@ body {
   transform: translateY(-3px);
 }
 
-.day-badge {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.day-reward-icon {
-  font-size: 2.8rem;
-  margin-bottom: 8px;
-}
-
-.day-reward-name {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #ffd166;
-}
+.day-badge { font-size: 0.85rem; font-weight: bold; color: var(--text-muted); margin-bottom: 8px; }
+.day-reward-icon { font-size: 2.8rem; margin-bottom: 8px; }
+.day-reward-name { font-size: 0.95rem; font-weight: 800; color: #ffd166; }
 
 .btn-claim-daily {
   padding: 15px 45px;
@@ -1254,18 +1482,7 @@ body {
   box-shadow: 0 0 25px var(--gold-glow);
   transition: all 0.2s;
 }
-.btn-claim-daily:hover:not(:disabled) {
-  transform: scale(1.05);
-}
-.btn-claim-daily:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  filter: grayscale(1);
-}
 
-/* ==========================================================================
-   10. INVENTORY VIEW (SOVUTLAR VA QUROLLAR KO'RINISHI)
-   ========================================================================== */
 .inventory-grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -1282,11 +1499,7 @@ body {
   transition: all 0.2s;
 }
 
-.item-slot-card.equipped {
-  border-color: #06d6a0;
-  box-shadow: 0 0 15px rgba(6, 214, 160, 0.4);
-}
-
+.item-slot-card.equipped { border-color: #06d6a0; box-shadow: 0 0 15px rgba(6, 214, 160, 0.4); }
 .item-slot-card.mythic {
   border-color: #ffd166;
   box-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
@@ -1310,13 +1523,13 @@ body {
 }
 
 .game-toast {
-  background: rgba(15, 20, 32, 0.95);
+  background: rgba(15, 20, 32, 0.96);
   border: 2px solid var(--primary-gold);
   border-radius: 8px;
   padding: 14px 22px;
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px var(--gold-glow);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.85), 0 0 15px var(--gold-glow);
   animation: slideInRight 0.3s ease;
   pointer-events: auto;
   min-width: 280px;

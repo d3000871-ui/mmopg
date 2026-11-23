@@ -11,16 +11,19 @@
 </head>
 <body>
 
+  <!-- REAL BLOOD & WOUNDS VIGNETTE OVERLAY -->
+  <div id="blood-screen-overlay"></div>
+
   <!-- =========================================================================
        1. LOADING SCREEN (ZAGRUZKA QISMI)
        ========================================================================= -->
   <div id="loading-screen">
     <div class="loading-logo-box">
       <h1 class="game-title">SO'NMAS AFSUNA</h1>
-      <div class="game-subtitle">EKSHN MMORPG REALM</div>
+      <div class="game-subtitle">EKSHN MMORPG: QADIMIY MAMLAKAT SHONI</div>
       <div class="loading-server-badge">
         <span class="pulse-dot"></span>
-        <span>SERVER: UZB-SAMARQAND (9,842 ONLAYN)</span>
+        <span>SERVER: SAMARQAND-TURON (14,520 JANGCHI ONLAYN)</span>
       </div>
     </div>
 
@@ -28,10 +31,10 @@
       <div class="loading-progress-bar" id="loadingBar"></div>
     </div>
 
-    <div class="loading-status-text" id="loadingStatus">O'yin resurslari yuklanmoqda... 0%</div>
-    <div class="loading-tip" id="loadingTip">Maslahat: Temirxonada maxsus toshlar yordamida qurol va sovutlarni +15 gacha kuchaytirishingiz mumkin!</div>
+    <div class="loading-status-text" id="loadingStatus">Mamlakat qal'alari va resurslari yuklanmoqda... 0%</div>
+    <div class="loading-tip" id="loadingTip">Maslahat: Eng oliy martaba bu "ALIY SARKARDA" bo'lib, 1000-darajaga erishganlarga beriladi!</div>
 
-    <button id="btnEnterGame" class="btn-start-game" onclick="startGameFlow()">O'YINGA KIRISH ⚔️</button>
+    <button id="btnEnterGame" class="btn-start-game" onclick="startGameFlow()">MAMLAKATGA KIRISH ⚔️</button>
   </div>
 
   <!-- =========================================================================
@@ -40,34 +43,34 @@
   <div id="story-screen" class="hidden">
     <div class="story-modal">
       <div class="story-header">
-        <h2 class="story-title">📖 SO'NMAS ZULMAT VA UCH QAHRAMON ERTAGI</h2>
+        <h2 class="story-title">📖 SO'NMAS ZULMAT VA AFSONAVIY SARKARDALAR ERTAGI</h2>
       </div>
       <div class="story-content">
         <p>
-          Qadim zamonlarda, buyuk Samarqand va Turon osmonida afsonaviy olovli meteor yorilib, yer yuziga So'nmas Zulmat lashkarlari bostirib kirdi. Butun dunyo qorong'ulik va maxluqlar domiga tushganda, el-yurtni qutqarish uchun uch nafar qasamyod qilgan pahlavon maydonga chiqdi.
+          Qadimiy Samarqand, Buxoro va Turon zaminining osmonida sirli qizil yulduz charqlab, So'nmas Zulmat lashkarlari uyg'ondi. Ming yillik qal'alar va go'zal shaharlar xavf ostida qolganida, mamlakatning eng dovyurak o'g'lonlari — haqiqiy odam shaklidagi po'lat zirhli Jangchilar, sirli afsun sohibi bo'lgan Jodugarlar va chaqmoqdek tezkor Kamonchilar qonli jangga kirdilar.
         </p>
         <p>
-          Ulardan biri — tog'dek qudratli <strong>Jangchi</strong> bo'lib, uning po'lat qilichi va qalqoni oldida hech qanday iblis dosh berolmasdi. Ikkinchisi — qadimiy sir-asrorlarni o'rgangan qudratli <strong>Jodugar</strong> bo'lib, u osmondan olovli yulduzlar yog'dirar va dushmanlarni muzga aylantirardi. Uchinchisi esa — ko'zi burgutdek o'tkir mohir <strong>Kamonchi</strong> edi, uning sehrli kamonidan otilgan bitta o'q yuzlab dushmanlarni bir zumda yer tishlatardi!
+          Har bir zarba po'lat sovutlarni qirqib, yer yuziga dushmanlarning qoni sachraydi. Ushbu shafqatsiz kurashda faqat 100 xil qahramonlik sinovidan o'tgan, sovutlarini +100 darajagacha kuchaytirgan va 1000-darajali buyuk cho'qqini zabt etgan pahlavon o'z xalqining eng oliy unvoni — <strong>"ALIY SARKARDA"</strong> tojiga sazovor bo'ladi!
         </p>
         <p>
-          Bugun ana shu Zulmat qal'alarini zabt etish va afsonaviy toshlar yordamida ilohiy qurol-sovutlarni yaratish vaqti yetdi! Qahramon, o'z yo'lingni tanla va jang maydoniga kir!
+          Maydonga kiring, Omad Barabanini aylantiring, temirxonada toshlar bilan qurollaringizni charxlab, buyuk afsonangizni yarating!
         </p>
 
         <div class="story-classes-preview">
           <div class="story-hero-card warrior">
             <div class="story-hero-icon">⚔️</div>
-            <h4>EKSHN JANGCHI</h4>
-            <p>Yaqin jang ustasi, ulkan qilich va yengilmas qalqon. Qonli g'azab va po'lat zarba egasi.</p>
+            <h4>PO'LAT JANGCHI</h4>
+            <p>Yaqin jang ustasi, og'ir ritsar sovutlari va dushmanni ikkiga bo'luvchi pahlavon qilichi.</p>
           </div>
           <div class="story-hero-card mage">
             <div class="story-hero-icon">🔮</div>
-            <h4>JODUGAR</h4>
-            <p>Qadimiy sehrlar, halokatli meteorlar va dushmanlarni to'xtatuvchi muzli bo'ronlar hukmdori.</p>
+            <h4>QADIMIY JODUGAR</h4>
+            <p>Olovli meteorlar, muzli bo'ronlar va qonli ziyonni qaytaruvchi ilohiy plazma qalqoni.</p>
           </div>
           <div class="story-hero-card archer">
             <div class="story-hero-icon">🏹</div>
-            <h4>KAMONCHI</h4>
-            <p>O'qlar yomg'iri, yashin tezligidagi merganlik va o'lim keltiruvchi feniks o'qlari sohibi.</p>
+            <h4>MERGAN KAMONCHI</h4>
+            <p>Zaharli o'qlar yomg'iri, yashin tezligidagi kritik zarbalar va afsonaviy Feniks kamoni.</p>
           </div>
         </div>
       </div>
@@ -84,27 +87,36 @@
     <!-- TOP NAVIGATION -->
     <header class="top-nav">
       <div class="nav-brand">
-        <span style="font-size: 1.8rem;">⚔️</span>
-        <div class="nav-logo-text">SO'NMAS AFSUNA</div>
+        <span style="font-size: 1.8rem;">👑</span>
+        <div>
+          <div class="nav-logo-text">SO'NMAS AFSUNA</div>
+          <div style="font-size: 0.75rem; color: #72efdd; letter-spacing: 1px;">TURON MMORPG REALM</div>
+        </div>
       </div>
 
       <div class="nav-player-summary">
         <div class="player-lvl-badge" id="navPlayerLevel">LV. 1</div>
+        <div class="supreme-commander-tag" id="navTitleBadge">
+          <span>🎖️</span>
+          <span id="navTitleText">Navkar (Boshlang'ich)</span>
+        </div>
         <div class="currency-box">
           <span>🪙</span>
-          <span class="gold-text" id="navPlayerGold">1,000</span>
+          <span class="gold-text" id="navPlayerGold">5,000</span>
         </div>
         <div class="currency-box">
           <span>💎</span>
-          <span class="diamond-text" id="navPlayerDiamonds">50</span>
+          <span class="diamond-text" id="navPlayerDiamonds">100</span>
         </div>
       </div>
 
       <nav class="nav-menu-tabs">
         <button class="tab-btn active" onclick="switchView('battle')">⚔️ JANG MAYDONI</button>
-        <button class="tab-btn" onclick="switchView('inventory')">🛡️ SOVUT & QUROL</button>
-        <button class="tab-btn" onclick="switchView('forge')">🔨 TEMIRXONA (KUCHAYTIRISH)</button>
-        <button class="tab-btn special-shop" onclick="switchView('shop')">💎 MAGAZIN (UZB SO'MDA)</button>
+        <button class="tab-btn special-wheel" onclick="switchView('wheel')">🎡 OMAD BARABANI</button>
+        <button class="tab-btn" onclick="switchView('heroes')">👥 100 QAHRAMON & UNVON</button>
+        <button class="tab-btn" onclick="switchView('inventory')">🛡️ SOVUTLAR (+100)</button>
+        <button class="tab-btn" onclick="switchView('forge')">🔨 TEMIRXONA</button>
+        <button class="tab-btn special-shop" onclick="switchView('shop')">💎 MAGAZIN (DONAT)</button>
         <button class="tab-btn" onclick="switchView('daily')">🎁 KUNLIK SOVG'A</button>
         <button class="tab-btn" onclick="openStoryModal()">📜 ERTAK</button>
       </nav>
@@ -114,7 +126,7 @@
     <main class="game-container">
 
       <!-- =====================================================================
-           VIEW 1: JANG MAYDONI (BATTLE ARENA)
+           VIEW 1: JANG MAYDONI (REAL QON, YARALAR VA EKSHN JANG)
            ===================================================================== -->
       <section id="view-battle" class="game-view active">
         <div class="battle-grid">
@@ -124,8 +136,9 @@
               <img id="heroAvatarImg" src="assets/main_hero.jpg" alt="Qahramon">
               <div class="hero-class-overlay">
                 <div>
-                  <div class="hero-name-title" id="heroNameDisplay">QAHRAMON</div>
-                  <div style="font-size: 0.85rem; color: #a8dadc;" id="heroClassDisplay">Ekshn Jangchi</div>
+                  <div class="hero-name-title" id="heroNameDisplay">DIYORBEK BAHODIR</div>
+                  <div style="font-size: 0.85rem; color: #ffd166; font-weight: bold;" id="heroRankTitle">Unvon: Oddiy Navkar</div>
+                  <div style="font-size: 0.8rem; color: #a8dadc;" id="heroClassDisplay">Po'lat Jangchi</div>
                 </div>
                 <div class="player-lvl-badge" id="heroLevelBadge">LV. 1</div>
               </div>
@@ -140,7 +153,7 @@
             <!-- HP / MP / EXP BARS -->
             <div class="bar-group">
               <div class="bar-label">
-                <span style="color: #ff4d6d;">❤️ Jon (HP):</span>
+                <span style="color: #ff4d6d;">🩸 Jon (HP) & Yaralar:</span>
                 <span id="heroHpText">1000 / 1000</span>
               </div>
               <div class="stat-bar-outer">
@@ -150,7 +163,7 @@
 
             <div class="bar-group">
               <div class="bar-label">
-                <span style="color: #00f2fe;">💧 Mana (MP):</span>
+                <span style="color: #00f2fe;">💧 Sehr Manasi (MP):</span>
                 <span id="heroMpText">300 / 300</span>
               </div>
               <div class="stat-bar-outer">
@@ -160,7 +173,7 @@
 
             <div class="bar-group">
               <div class="bar-label">
-                <span style="color: #c77dff;">⭐ Tajriba (EXP):</span>
+                <span style="color: #c77dff;">⭐ Tajriba (EXP - Max Lv.1000):</span>
                 <span id="heroExpText">0 / 100</span>
               </div>
               <div class="stat-bar-outer">
@@ -179,11 +192,11 @@
                 <span id="heroDefStat">80</span>
               </div>
               <div class="stat-item">
-                <span>Kritik (Crit):</span>
+                <span>Kritik Zarba:</span>
                 <span id="heroCritStat">15%</span>
               </div>
               <div class="stat-item">
-                <span>Tezlik (Speed):</span>
+                <span>Tezlik:</span>
                 <span id="heroSpeedStat">1.2x</span>
               </div>
             </div>
@@ -194,24 +207,24 @@
             <div class="dungeon-header">
               <div>
                 <h3 style="font-family: var(--font-title); color: var(--primary-gold); font-size: 1.4rem;">
-                  🏰 QAL'A MAYDONI
+                  🏰 SAMARQAND QAL'A MAYDONI
                 </h3>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Real vaqtli MMORPG ekshn jang tizimi</span>
+                <span style="font-size: 0.85rem; color: #ff70a6;">Haqiqiy odam personajlari, qon sachrashlari va yaralanish fizikasi</span>
               </div>
               <div>
                 <label for="dungeonSelect" style="font-size: 0.9rem; color: #a8dadc; margin-right: 6px;">Hudud:</label>
                 <select id="dungeonSelect" class="dungeon-select" onchange="onSelectDungeon(this.value)">
-                  <option value="1">1. Zulmat O'rmoni (Goblinlar & Bo'rilar)</option>
-                  <option value="2">2. Samarqand Yerosti Qal'asi (Qorovullar)</option>
+                  <option value="1">1. Qonli O'rmon (Goblinlar & Bo'rilar)</option>
+                  <option value="2">2. Samarqand Yerosti Labirinti (Zulmat Qorovullari)</option>
                   <option value="3">3. Alvon Lava G'ori (Olovli Demonlar)</option>
-                  <option value="4">4. Zulmat Taxti (GIGANT BOSS AJDAR)</option>
+                  <option value="4">4. Zulmat Taxti (GIGANT QONXO'R AJDAR BOSS)</option>
                 </select>
               </div>
             </div>
 
-            <!-- CANVAS FOR COMBAT ACTION -->
+            <!-- CANVAS FOR COMBAT ACTION (WITH BLOOD SPLATTERS) -->
             <div class="arena-canvas-wrapper" id="arenaWrapper">
-              <canvas id="combatCanvas" width="900" height="400"></canvas>
+              <canvas id="combatCanvas" width="900" height="420"></canvas>
             </div>
 
             <!-- JANG USULLARI (SKILLS) -->
@@ -221,28 +234,120 @@
 
             <!-- BATTLE LOGS -->
             <div class="battle-logs" id="battleLogs">
-              <div class="log-entry">⚔️ Jang maydoniga xush kelibsiz! Maxluqlarga hujum qilish uchun mahoratlarni bosing!</div>
+              <div class="log-entry">⚔️ Jang maydoniga xush kelibsiz! Har bir zarba dushmanga og'ir yaralar yetkazadi va qon sachratadi!</div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           VIEW 2: INVENTORY & SOVUTLAR (EQUIPMENT)
+           VIEW 2: AYLANADIGAN BARABAN (LUCKY FORTUNE WHEEL)
+           ===================================================================== -->
+      <section id="view-wheel" class="game-view">
+        <div class="wheel-container-wrapper">
+          <div class="wheel-stage">
+            <h2 style="font-family: var(--font-title); color: var(--primary-gold); font-size: 2rem; margin-bottom: 15px;">
+              🎡 SHOHONA OMAD BARABANI
+            </h2>
+            <div class="wheel-canvas-box">
+              <div class="wheel-pointer"></div>
+              <canvas id="wheelCanvas" width="380" height="380"></canvas>
+            </div>
+
+            <button id="btnSpinWheel" class="btn-spin-wheel" onclick="spinLuckyWheel()">BARABANNI AYLANTIRISH 🎰</button>
+            <p style="margin-top: 10px; color: #a8dadc; font-size: 0.9rem;">Narxi: 1 marta aylantirish = 1,000 Oltin (yoki bepul chipta)</p>
+          </div>
+
+          <div class="wheel-rewards-info">
+            <h3 style="font-family: var(--font-title); color: #ffd166; font-size: 1.4rem;">🎁 Barabandagi Noyob Sovg'alar:</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
+              Omad g'ildiragini aylantirib, qurollar, kuchaytirish toshlari va millionlab tangalarni yutib oling!
+            </p>
+
+            <div class="wheel-rewards-list">
+              <div class="wheel-reward-card">
+                <span style="font-size: 1.8rem;">👑</span>
+                <div>
+                  <strong>ALIY SARKARDA Sovuti</strong>
+                  <div style="font-size: 0.8rem; color: #ffd166;">+100 Afsonaviy</div>
+                </div>
+              </div>
+              <div class="wheel-reward-card">
+                <span style="font-size: 1.8rem;">✨</span>
+                <div>
+                  <strong>50 ta Zulmat Javohiri</strong>
+                  <div style="font-size: 0.8rem; color: #00f2fe;">+100 gacha toshlar</div>
+                </div>
+              </div>
+              <div class="wheel-reward-card">
+                <span style="font-size: 1.8rem;">💎</span>
+                <div>
+                  <strong>5,000 Olmos</strong>
+                  <div style="font-size: 0.8rem; color: #72efdd;">Noyob resurs</div>
+                </div>
+              </div>
+              <div class="wheel-reward-card">
+                <span style="font-size: 1.8rem;">🪙</span>
+                <div>
+                  <strong>500,000 Oltin</strong>
+                  <div style="font-size: 0.8rem; color: #ffd166;">Katta boylik</div>
+                </div>
+              </div>
+              <div class="wheel-reward-card">
+                <span style="font-size: 1.8rem;">🔮</span>
+                <div>
+                  <strong>30 ta Alvon Tosh</strong>
+                  <div style="font-size: 0.8rem; color: #f72585;">O'rta bosqich</div>
+                </div>
+              </div>
+              <div class="wheel-reward-card">
+                <span style="font-size: 1.8rem;">⚔️</span>
+                <div>
+                  <strong>Amir Temur Qilichi</strong>
+                  <div style="font-size: 0.8rem; color: #ffb703;">Top qurol</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 3: 100 TA QAHRAMON VA UNVONLAR (ENG OLIY: ALIY SARKARDA)
+           ===================================================================== -->
+      <section id="view-heroes" class="game-view">
+        <div class="heroes-catalog-wrapper">
+          <div class="heroes-catalog-header">
+            <h2 style="font-family: var(--font-title); color: var(--primary-gold); font-size: 2.2rem;">
+              👥 100 TA QAHRAMON VA JANGCHI UNVONLARI
+            </h2>
+            <p style="color: var(--text-muted); max-width: 750px; margin: 8px auto;">
+              Oddiy Navkardan boshlab eng oliy martaba — <strong>"ALIY SARKARDA"</strong> darajasigacha bo'lgan 100 ta qahramonlik bosqichi! Har 10 darajaga yetganingizda yangi unvon va qudratli nishon ochiladi.
+            </p>
+          </div>
+
+          <div class="heroes-grid-100" id="heroes100Grid">
+            <!-- 100 Heroes rendered via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIEW 4: INVENTORY & SOVUTLAR (MAX LEVEL: 100)
            ===================================================================== -->
       <section id="view-inventory" class="game-view">
         <div class="shop-wrapper">
           <div class="shop-header">
-            <h2>🛡️ QAHRAMON SOVUTLARI VA QUROLLARI</h2>
-            <p style="color: var(--text-muted); margin-top: 6px;">Kiyilgan sovutlar va zaxiradagi qurol-aslahalaringiz</p>
+            <h2>🛡️ QAHRAMONNING REALISTIK SOVUTLARI (MAX LEVEL: 100)</h2>
+            <p style="color: var(--text-muted); margin-top: 6px;">Haqiqiy po'lat ritsar sovutlari, dubulg'alar va pahlavon aslahalari</p>
           </div>
 
-          <h3 style="font-family: var(--font-title); color: #ffd166; margin-bottom: 15px;">Kiyilgan Qurol-Aslahalar:</h3>
+          <h3 style="font-family: var(--font-title); color: #ffd166; margin-bottom: 15px;">Kiyilgan Real Sovutlar:</h3>
           <div class="inventory-grid-view" id="equippedGrid">
             <!-- Equipped gear items -->
           </div>
 
-          <h3 style="font-family: var(--font-title); color: #ffd166; margin: 30px 0 15px 0;">Barcha Inventar Ashyolari:</h3>
+          <h3 style="font-family: var(--font-title); color: #ffd166; margin: 30px 0 15px 0;">Barcha Inventar Aslahalari:</h3>
           <div class="inventory-grid-view" id="allInventoryGrid">
             <!-- All items -->
           </div>
@@ -250,40 +355,40 @@
       </section>
 
       <!-- =====================================================================
-           VIEW 3: FORGE / TEMIRXONA (SOVUTLAR VA QUROLLARNI KUCHAYTIRISH)
+           VIEW 5: FORGE / TEMIRXONA (KUCHAYTIRISH: +100 GACHA)
            ===================================================================== -->
       <section id="view-forge" class="game-view">
         <div class="forge-container">
           <!-- UPGRADE ANVIL INTERFACE -->
           <div class="forge-panel">
-            <h2 class="forge-title">🔨 TEMIRXONA VA KUCHAYTIRISH</h2>
+            <h2 class="forge-title">🔨 TEMIRXONA: SOVUTLARNI +100 GACHA KUCHAYTIRISH</h2>
             <p style="color: var(--text-muted); margin-bottom: 20px;">
-              Qurol va sovutlarni maxsus toshlar yordamida kuchaytiring. Har bir daraja (+1...+15) buyum parametrlarini keskin oshiradi!
+              Qurol va sovutlarni maxsus toshlar yordamida **+100 gacha** kuchaytiring. Har bir daraja (+1...+100) buyumning ATK va DEF ko'rsatkichlarini muttasil oshirib boradi!
             </p>
 
             <div class="forge-anvil-display">
               <div class="forge-selected-item-icon" id="forgeItemIcon">⚔️</div>
-              <div class="forge-item-name" id="forgeItemName">Alvon Qilich</div>
-              <div class="forge-enhance-badge" id="forgeItemBadge">+0 ODDsound</div>
+              <div class="forge-item-name" id="forgeItemName">Alvon Po'lat Qilich</div>
+              <div class="forge-enhance-badge" id="forgeItemBadge">+0 DARAJA</div>
               <div style="margin-top: 10px; color: #a8dadc;" id="forgeItemStats">Hujum: +120</div>
             </div>
 
-            <h4 style="font-family: var(--font-title); color: #ffd166; margin-bottom: 10px;">Maxsus Toshni Tanlang:</h4>
+            <h4 style="font-family: var(--font-title); color: #ffd166; margin-bottom: 10px;">Maxsus Kuchaytirish Toshini Tanlang:</h4>
             <div class="stones-inventory-grid">
               <div class="stone-card active" id="stoneCardCommon" onclick="selectStoneType('common')">
                 <div class="stone-icon">💎</div>
-                <div class="stone-name">Oddiy Tosh (+1..+5)</div>
-                <div class="stone-count" id="countCommonStones">15 dona</div>
+                <div class="stone-name">Oddiy Tosh (+1..+30)</div>
+                <div class="stone-count" id="countCommonStones">20 dona</div>
               </div>
               <div class="stone-card" id="stoneCardCrimson" onclick="selectStoneType('crimson')">
                 <div class="stone-icon">🔮</div>
-                <div class="stone-name">Alvon Tosh (+6..+10)</div>
-                <div class="stone-count" id="countCrimsonStones">5 dona</div>
+                <div class="stone-name">Alvon Tosh (+31..+70)</div>
+                <div class="stone-count" id="countCrimsonStones">8 dona</div>
               </div>
               <div class="stone-card" id="stoneCardMythic" onclick="selectStoneType('mythic')">
                 <div class="stone-icon">✨</div>
-                <div class="stone-name">Zulmat Javohiri (+11..+15)</div>
-                <div class="stone-count" id="countMythicStones">2 dona</div>
+                <div class="stone-name">Zulmat Javohiri (+71..+100)</div>
+                <div class="stone-count" id="countMythicStones">3 dona</div>
               </div>
             </div>
 
@@ -294,7 +399,7 @@
               </div>
               <div class="chance-row">
                 <span>Kerakli Oltin:</span>
-                <strong id="forgeCostGold" style="color: #ffd166;">500 🪙</strong>
+                <strong id="forgeCostGold" style="color: #ffd166;">600 🪙</strong>
               </div>
             </div>
 
@@ -312,15 +417,31 @@
       </section>
 
       <!-- =====================================================================
-           VIEW 4: SHOP / MAGAZIN (REAL PUL TULDIRISH UZB SOMDA & PROMOKOD)
+           VIEW 6: SHOP / MAGAZIN (DONAT KARTASI: 9860080186988947 VA PROMOKOD)
            ===================================================================== -->
       <section id="view-shop" class="game-view">
         <div class="shop-wrapper">
           <div class="shop-header">
-            <h2>🛒 SHOHLIK MAGAZINI (UZB SO'MDA TO'LDIRISH)</h2>
+            <h2>🛒 SHOHLIK MAGAZINI (DONAT VA REAL PUL TO'LDIRISH)</h2>
             <p style="color: var(--text-muted); margin-top: 6px;">
-              Hisobingizni O'zbekiston so'mida to'ldiring yoki maxsus promokodlardan foydalaning!
+              Barcha donat to'lovlari rasmiy kartaga o'tkaziladi: <strong>9860080186988947</strong>
             </p>
+          </div>
+
+          <!-- OFFICIAL DONATE CARD BANNER -->
+          <div class="official-donate-card-box">
+            <div class="card-info-side">
+              <div class="card-chip-icon">💳</div>
+              <div>
+                <div style="font-size: 0.85rem; color: #a8dadc; text-transform: uppercase;">Rasmiy Donat Kartasi (HUMO / UZCARD):</div>
+                <div class="card-number-display" id="officialCardNumber">9860 0801 8698 8947</div>
+                <div style="font-size: 0.8rem; color: #06d6a0;">Holati: To'lovlarni qabul qilishga tayyor ✓</div>
+              </div>
+            </div>
+            <button class="btn-copy-card" onclick="copyDonateCardNumber()">
+              <span>📋</span>
+              <span>Karta Raqamini Nusxalash</span>
+            </button>
           </div>
 
           <!-- PROMOKOD DIYORBEK BO'LIMI -->
@@ -330,7 +451,7 @@
               <span>MAXSUS SIRLI PROMOKODNI FAOLLASHTIRISH</span>
             </div>
             <p style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 14px;">
-              Agar sizda <strong>DIYORBEK</strong> promokodi bo'lsa, uni quyiga kiriting: Daraja 100, ful pul, olmoslar va barcha afsonaviy Xudo darajasidagi sovutlar avtomatik beriladi!
+              Agar sizda <strong>DIYORBEK</strong> promokodi bo'lsa, uni quyiga kiriting: Daraja 100, ful pul (999,999,999), olmoslar va barcha +100 Afsonaviy ALIY SARKARDA sovutlari avtomatik beriladi!
             </p>
             <div class="promocode-input-group">
               <input type="text" id="promoInput" class="promocode-input" placeholder="Promokodni kiriting (masalan: DIYORBEK)" />
@@ -340,7 +461,7 @@
 
           <!-- REAL PUL TO'LDIRISH PAKETLARI -->
           <h3 style="font-family: var(--font-title); color: var(--primary-gold); margin-bottom: 20px; text-align: center; font-size: 1.6rem;">
-            UZB SO'MDAGI TO'LDIRISH PAKETLARI
+            UZB SO'MDAGI DONAT PAKETLARI
           </h3>
 
           <div class="shop-packages-grid">
@@ -351,10 +472,10 @@
               <ul class="pack-benefits">
                 <li>💎 1,000 Olmos</li>
                 <li>🪙 50,000 Oltin</li>
-                <li>💎 10 ta Kuchaytirish toshi</li>
+                <li>💎 20 ta Kuchaytirish toshi</li>
               </ul>
               <div class="pack-price-tag">10 000 SO'M</div>
-              <button class="btn-buy-pack" onclick="openPaymentModal('JANGCHI BOSH PACK', 10000, 1000, 50000, 10, 0, 0)">XARID QILISH 💳</button>
+              <button class="btn-buy-pack" onclick="openPaymentModal('JANGCHI BOSH PACK', 10000, 1000, 50000, 20, 0, 0)">DONAT QILISH 💳</button>
             </div>
 
             <!-- Pack 2 -->
@@ -364,11 +485,11 @@
               <ul class="pack-benefits">
                 <li>💎 3,000 Olmos</li>
                 <li>🪙 150,000 Oltin</li>
-                <li>🔮 25 ta Kuchaytirish toshi</li>
-                <li>✨ 5 ta Alvon tosh</li>
+                <li>🔮 50 ta Kuchaytirish toshi</li>
+                <li>✨ 15 ta Alvon tosh</li>
               </ul>
               <div class="pack-price-tag">25 000 SO'M</div>
-              <button class="btn-buy-pack" onclick="openPaymentModal('BAHODIR STANDART', 25000, 3000, 150000, 25, 5, 0)">XARID QILISH 💳</button>
+              <button class="btn-buy-pack" onclick="openPaymentModal('BAHODIR STANDART', 25000, 3000, 150000, 50, 15, 0)">DONAT QILISH 💳</button>
             </div>
 
             <!-- Pack 3 -->
@@ -379,12 +500,12 @@
               <ul class="pack-benefits">
                 <li>💎 7,500 Olmos</li>
                 <li>🪙 500,000 Oltin</li>
-                <li>🔮 50 ta Kuchaytirish toshi</li>
-                <li>✨ 15 ta Alvon tosh</li>
-                <li>🛡️ Epik Elita Qalqoni</li>
+                <li>🔮 100 ta Kuchaytirish toshi</li>
+                <li>✨ 35 ta Alvon tosh</li>
+                <li>🛡️ Epik Elita Qalqoni (+50)</li>
               </ul>
               <div class="pack-price-tag">50 000 SO'M</div>
-              <button class="btn-buy-pack" onclick="openPaymentModal('AMIR TEMUR ELITA', 50000, 7500, 500000, 50, 15, 0)">XARID QILISH 💳</button>
+              <button class="btn-buy-pack" onclick="openPaymentModal('AMIR TEMUR ELITA', 50000, 7500, 500000, 100, 35, 5)">DONAT QILISH 💳</button>
             </div>
 
             <!-- Pack 4 -->
@@ -394,35 +515,35 @@
               <ul class="pack-benefits">
                 <li>💎 18,000 Olmos</li>
                 <li>🪙 1,500,000 Oltin</li>
-                <li>✨ 30 ta Alvon tosh</li>
-                <li>🌟 10 ta Zulmat Javohiri</li>
+                <li>✨ 60 ta Alvon tosh</li>
+                <li>🌟 25 ta Zulmat Javohiri</li>
                 <li>👑 'Shoh' unvoni</li>
               </ul>
               <div class="pack-price-tag">100 000 SO'M</div>
-              <button class="btn-buy-pack" onclick="openPaymentModal('SHOHONA ZAFAR', 100000, 18000, 1500000, 100, 30, 10)">XARID QILISH 💳</button>
+              <button class="btn-buy-pack" onclick="openPaymentModal('SHOHONA ZAFAR', 100000, 18000, 1500000, 200, 60, 25)">DONAT QILISH 💳</button>
             </div>
 
             <!-- Pack 5 (VIP) -->
             <div class="pack-card vip">
-              <span class="pack-badge" style="background:#ffb703; color:#000;">ULTRA VIP</span>
+              <span class="pack-badge" style="background:#ffb703; color:#000;">ALIY SARKARDA</span>
               <div class="pack-icon">🐉</div>
               <h4 class="pack-title">SULTON GRAND PAKET</h4>
               <ul class="pack-benefits">
                 <li>💎 50,000 Olmos</li>
                 <li>🪙 5,000,000 Oltin</li>
-                <li>🌟 100 ta Zulmat Javohiri</li>
-                <li>🐉 Afsonaviy Ajdar Sovuti</li>
-                <li>🌟 VIP Oltin Status</li>
+                <li>🌟 150 ta Zulmat Javohiri</li>
+                <li>🐉 Afsonaviy Ajdar Sovuti (+100)</li>
+                <li>🌟 VIP ALIY SARKARDA nishoni</li>
               </ul>
               <div class="pack-price-tag" style="color: #ffd166;">250 000 SO'M</div>
-              <button class="btn-buy-pack" style="background: linear-gradient(135deg, #ffd166, #fb8500); color: #000;" onclick="openPaymentModal('SULTON GRAND PAKET', 250000, 50000, 5000000, 300, 100, 50)">XARID QILISH 💳</button>
+              <button class="btn-buy-pack" style="background: linear-gradient(135deg, #ffd166, #fb8500); color: #000;" onclick="openPaymentModal('SULTON GRAND PAKET', 250000, 50000, 5000000, 500, 200, 150)">DONAT QILISH 💳</button>
             </div>
           </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           VIEW 5: KUNLIK SOVG'ALAR (DAILY REWARDS)
+           VIEW 7: KUNLIK SOVG'ALAR (DAILY REWARDS)
            ===================================================================== -->
       <section id="view-daily" class="game-view">
         <div class="daily-rewards-container">
@@ -445,17 +566,25 @@
   </div>
 
   <!-- =========================================================================
-       PAYMENT MODAL (PAYME / CLICK / UZUM BANK)
+       PAYMENT MODAL (DONAT KARTASI: 9860080186988947)
        ========================================================================= -->
   <div id="paymentModal" class="modal-overlay hidden">
     <div class="payment-modal-box">
       <button class="modal-close-btn" onclick="closePaymentModal()">&times;</button>
       <h3 style="font-family: var(--font-title); color: var(--primary-gold); font-size: 1.5rem; text-align: center;">
-        UZB SO'MDA TO'LOV QILISH
+        UZB SO'MDA DONAT TO'LOVI
       </h3>
       <p style="text-align: center; color: #a8dadc; margin-top: 4px;" id="modalPackTitle">Paket: Bahodir Standart</p>
       <div style="text-align: center; font-size: 1.7rem; font-weight: 900; color: #06d6a0; margin: 12px 0;" id="modalPackPrice">
         25 000 SO'M
+      </div>
+
+      <div class="card-transfer-banner">
+        <div class="card-transfer-title">Mablag' tushadigan karta raqami (Humo):</div>
+        <div class="card-transfer-num">9860 0801 8698 8947</div>
+        <button class="btn-copy-card" style="margin: 8px auto 0 auto; padding: 6px 14px; font-size: 0.85rem;" onclick="copyDonateCardNumber()">
+          📋 Nusxalash
+        </button>
       </div>
 
       <div class="payment-methods-selector">
@@ -465,18 +594,18 @@
       </div>
 
       <div class="payment-field-group">
-        <label>Telefon raqami yoki Karta raqami:</label>
+        <label>Telefon raqami yoki kartangiz:</label>
         <input type="text" id="payCardInput" placeholder="+998 90 123 45 67 yoki 8600 ****" value="+998 99 " />
       </div>
 
-      <button class="btn-confirm-pay" onclick="confirmPaymentProcess()">TO'LOVNI TASDIQLASH (SIMULATSIYA) 🚀</button>
+      <button class="btn-confirm-pay" onclick="confirmPaymentProcess()">TO'LOVNI TASDIQLASH VA RESURSLARNI OLISH 🚀</button>
     </div>
   </div>
 
   <!-- TOAST NOTIFICATIONS -->
   <div id="toast-container"></div>
 
-  <!-- AUDIO SYNTHESIS & GAME LOGIC -->
+  <!-- AUDIO SYNTHESIS & COMPLETE GAME LOGIC -->
   <script src="game.js"></script>
 </body>
 </html>
